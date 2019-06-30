@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<base href="../">
+		<title>Home</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width">
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body>
+		<div style="width:100; background-color: black; ">
+			<img src="resources/banner.png" style="display: block; margin-left: auto; margin-right: auto;">
+		</div>
+		<div id="navbar">
+			<a href="./">Home</a>
+			<a href="about/">About</a>
+			<a href="projects/" class="active">Projects</a>
+			<a href="javascript:void(0);" class="icon" onclick="responsive()">
+		    <i class="fa fa-bars"></i>
+		  </a>
+		</div>
+		<div class="container">
+			<h1>Projects</h1>
+			<hr>
+			<div class="panels" style="width:100%; margin-left: auto; margin-right: auto;">
+				<a href="projects/jynn" class="panel">
+					<div id="dummy"></div>
+  				<div id="element">
+						<h3>Jynn</h3>
+						My project for Discord hack week
+					</div>
+        </a>
+			</div class="panels">
+		</div>
+	</body>
+	<footer>© MrRiptide 2019</footer>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+	// Create the dropdown base
+	$("<select />").appendTo("nav");
+
+	// Populate dropdown with menu items
+	$("nav a").each(function() {
+	 var el = $(this);
+	 if (el.attr("class")=="active"){
+		 $("<option />", {
+			 "selected": "selected",
+			 "value"   : el.attr("href"),
+			 "text"    : el.text()
+		 }).appendTo("nav select");
+	 } else{
+		 $("<option />", {
+			 "value"   : el.attr("href"),
+			 "text"    : el.text()
+		 }).appendTo("nav select");
+	 }
+	});
+	$("nav select").change(function() {
+		window.location = $(this).find("option:selected").val();
+	});
+	</script>
+
+<!--Code for sticky scrolling-->
+
+	<script>
+	// When the user scrolls the page, execute myFunction
+	window.onscroll = function() {myFunction()};
+
+	// Get the navbar
+	var navbar = document.getElementById("navbar");
+
+	// Get the offset position of the navbar
+	var sticky = navbar.offsetTop;
+
+	// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+	function myFunction() {
+	  if (window.pageYOffset >= sticky) {
+	    navbar.classList.add("sticky")
+	  } else {
+	    navbar.classList.remove("sticky");
+	  }
+	}
+
+	/* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the icon */
+	function responsive() {
+	  var x = document.getElementById("navbar");
+	  if (x.className === "navbar") {
+	    x.className += " responsive";
+	  } else {
+	    x.className = "navbar";
+	  }
+	}
+	</script>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<base href="../">
+		<title>Venues</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width">
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=rMlnKzqRnp">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=rMlnKzqRnp">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-32x32.png?v=rMlnKzqRnp">
+		<link rel="manifest" href="/favicon/manifest.json?v=rMlnKzqRnp">
+		<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=rMlnKzqRnp" color="#7de6ad">
+		<link rel="shortcut icon" href="/favicon/favicon.ico?v=rMlnKzqRnp">
+	</head>
+	<body>
+		<div style="width:100; background-color: black; ">
+			<img src="resources/banner.png" style="display: block; margin-left: auto; margin-right: auto;">
+		</div>
+		<div id="navbar">
+			<a href="./">Home</a>
+			<a href="about/" class="active">About</a>
+			<a href="projects/">Projects</a>
+			<a href="javascript:void(0);" class="icon" onclick="responsive()">
+		    <i class="fa fa-bars"></i>
+		  </a>
+		</div>
+		<div class="container">
+			<h1>Links</h1>
+			<hr>
+			<div class="panels" style="width:100%; margin-left: auto; margin-right: auto;">
+				<a href="https://www.youtube.com/channel/UC_vxdTOUAkjUpWzAl_VCadw" target="_blank" class="panel">
+					<div id="dummy"></div>
+					<div id="element">
+						<img src="resources/youtube.png" width="80%" class="rounded"></img>
+						<h3>MrRiptide</h3>
+					</div>
+				</a>
+				<a href="https://twitch.tv/MrRiptideTV" target="_blank" class="panel">
+					<div id="dummy"></div>
+					<div id="element">
+						<img src="resources/twitch.png" width="80%" class="rounded"></img>
+						<h3>MrRiptideTV</h3>
+					</div>
+				</a>
+				<a href="https://github.com/MrRiptide" target="_blank" class="panel">
+					<div id="dummy"></div>
+					<div id="element">
+						<img src="resources/github.png" width="80%" class="rounded"></img>
+						<h3>MrRiptide</h3>
+					</div>
+				</a>
+				<a href="https://twitter.com/RealMrRiptide" target="_blank" class="panel">
+					<div id="dummy"></div>
+					<div id="element">
+						<img src="resources/twitter.png" width="80%" class="rounded"></img>
+						<h3>RealMrRiptide</h3>
+					</div>
+				</a>
+			</div class="panels">
+			<!--<h1>About Me</h1>
+			Hello, I'm MrRiptide, also known as Lego-Lovin-Program.  I enjoy developing games, and hope to create my own game developing company in the future.  I have a youtube channel, and on that I mainly focus on
+			minecraft command block creations.
+
+
+
+
+				My accounts:
+				<li><a href="https://scratch.mit.edu/users/Lego-Lovin-Program/">Lego-Lovin-Program on Scratch</a></li>
+				<li><a href="https://scratch.mit.edu/users/MrRiptide/">MrRiptide on Scratch</a></li>
+				<li><a href="https://www.youtube.com/channel/UC_vxdTOUAkjUpWzAl_VCadw">MrRiptide on Youtube</a></li>
+				<li><a href="https://github.com/MrRiptide">MrRiptide on GitHub</a></li>
+				<li>MrRiptide on Minecraft</li>-->
+		</div>
+	</body>
+	<footer>© MrRiptide 2019</footer>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+	// Create the dropdown base
+	$("<select />").appendTo("nav");
+
+	// Populate dropdown with menu items
+	$("nav a").each(function() {
+	 var el = $(this);
+	 if (el.attr("class")=="active"){
+		 $("<option />", {
+			 "selected": "selected",
+			 "value"   : el.attr("href"),
+			 "text"    : el.text()
+		 }).appendTo("nav select");
+	 } else{
+		 $("<option />", {
+			 "value"   : el.attr("href"),
+			 "text"    : el.text()
+		 }).appendTo("nav select");
+	 }
+	});
+
+	$("nav select").change(function() {
+		window.location = $(this).find("option:selected").val();
+	});
+	</script>
+
+<!--Code for sticky scrolling-->
+
+	<script>
+	// When the user scrolls the page, execute myFunction
+	window.onscroll = function() {myFunction()};
+
+	// Get the navbar
+	var navbar = document.getElementById("navbar");
+
+	// Get the offset position of the navbar
+	var sticky = navbar.offsetTop;
+
+	// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+	function myFunction() {
+	  if (window.pageYOffset >= sticky) {
+	    navbar.classList.add("sticky")
+	  } else {
+	    navbar.classList.remove("sticky");
+	  }
+	}
+
+	/* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the icon */
+	function responsive() {
+	  var x = document.getElementById("navbar");
+	  if (x.className === "navbar") {
+	    x.className += " responsive";
+	  } else {
+	    x.className = "navbar";
+	  }
+	}
+	</script>
+</html>

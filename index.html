@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<base href="./">
+		<title>Home</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width">
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body>
+		<div style="width:100; background-color: black; ">
+			<img src="resources/banner.png" style="display: block; margin-left: auto; margin-right: auto;">
+		</div>
+		<div id="navbar">
+			<a href="./" class="active">Home</a>
+			<a href="about/">About</a>
+			<a href="projects/">Projects</a>
+			<a href="javascript:void(0);" class="icon" onclick="responsive()">
+		    <i class="fa fa-bars"></i>
+		  </a>
+		</div>
+		<div class="container">
+			<h1>Welcome</h1>
+			<hr>
+			<div style="width:70%; float:left;">
+				<div class="wide_panels"><!-- style="float:left; clear:none"-->
+					<h2>Recent Updates</h2>
+					<hr style="color:#fc6100; background-color:#fc6100; height:5px; margin-bottom:10px;">
+					<a href="projects/jynn">
+						<div style="padding-bottom:5px;">
+							<h3>Jynn Alpha Released</h3>
+							My project for Discord Hack Week has been released
+						</div>
+					</a>
+					<div style="padding-bottom:5px;">
+						<h3>New Site Released</h3>
+						An overhaul of the site was completed and is now released
+					</div>
+				</div>
+			</div>
+			<div style="width:30%; float:right;"><!-- style="float:right; clear:none"-->
+				<a class="twitter-timeline" data-height="500" data-theme="dark" href="https://twitter.com/RealMrRiptide?ref_src=twsrc%5Etfw">Tweets by RealMrRiptide</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+			</div>
+		</div>
+	</body>
+	<footer>© MrRiptide 2019</footer>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+	// Create the dropdown base
+	$("<select />").appendTo("nav");
+
+	// Populate dropdown with menu items
+	$("nav a").each(function() {
+	 var el = $(this);
+	 if (el.attr("class")=="active"){
+		 $("<option />", {
+			 "selected": "selected",
+			 "value"   : el.attr("href"),
+			 "text"    : el.text()
+		 }).appendTo("nav select");
+	 } else{
+		 $("<option />", {
+			 "value"   : el.attr("href"),
+			 "text"    : el.text()
+		 }).appendTo("nav select");
+	 }
+	});
+	$("nav select").change(function() {
+		window.location = $(this).find("option:selected").val();
+	});
+	</script>
+
+<!--Code for sticky scrolling-->
+
+	<script>
+	// When the user scrolls the page, execute myFunction
+	window.onscroll = function() {myFunction()};
+
+	// Get the navbar
+	var navbar = document.getElementById("navbar");
+
+	// Get the offset position of the navbar
+	var sticky = navbar.offsetTop;
+
+	// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+	function myFunction() {
+	  if (window.pageYOffset >= sticky) {
+	    navbar.classList.add("sticky")
+	  } else {
+	    navbar.classList.remove("sticky");
+	  }
+	}
+
+	/* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the icon */
+	function responsive() {
+	  var x = document.getElementById("navbar");
+	  if (x.className === "navbar") {
+	    x.className += " responsive";
+	  } else {
+	    x.className = "navbar";
+	  }
+	}
+	</script>
+</html>
