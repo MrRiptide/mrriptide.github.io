@@ -29,6 +29,7 @@ nav select {
 
 html, body {
 
+  background-color: #0c0c0c;
 	width: 100%;
 	height: 100%;
 	font-family: 'Verdana';
@@ -37,7 +38,6 @@ html, body {
 
 body {
 
-	background-color: #080808;
 	color:#ffffff;
 	margin: 0px;
 	/*background-image: url(resources/background4.jpg);*/
