@@ -7,23 +7,62 @@
 		<meta name="viewport" content="width=device-width">
 		<link href="style.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+		#viewGithub {
+			width: 35%;
+			float: right;
+			text-align: right;
+		}
+		#updates {
+			width: 65%;
+			float: left;
+		}
+		@media screen and (max-width: 1150px) {
+			#viewGithub {
+				overflow: scroll;
+				width: 80%;
+				margin: 5px;
+				margin-left: auto;
+				margin-right: auto;
+				float: none;
+				text-align: center;
+			}
+
+			#updates {
+				width: 100%;
+				float: none;
+			}
+		}
+		</style>
 	</head>
 	<body>
 		<div id="banner" style="width:100; background-color: black; ">
 			<img src="resources/banner.png" style="display: block; margin-left: auto; margin-right: auto;">
 		</div>
-		<div id="navbar">
+		<div class="topnav" id="myTopnav">
 			<a href="./">Home</a>
 			<a href="about/">About</a>
-			<a href="projects/">Projects</a>
-			<a href="javascript:void(0);" class="icon" onclick="responsive()">
-		    <i class="fa fa-bars"></i>
-		  </a>
+			<div class="dropdown">
+				<a href="projects/">
+			    <button class="dropbtn">Projects
+			      <i class="fa fa-caret-down"></i>
+			    </button>
+				</a>
+		    <div class="dropdown-content">
+		      <a href="projects/" id="active">Jynn</a>
+		    </div>
+		  </div>
+			<a href="javascript:void(0);" style="font-size:1em;" class="icon" onclick="reponsiveNavBar()">&#9776;</a>
 		</div>
 		<div class="container">
 			<h1>Jynn</h1>
 			<hr>
-			<div style="width:65%; float:left;">
+			<div id="viewGithub" class="sidepanel">
+				<a href="https://github.com/MrRiptide/Jynn"><!-- style="float:right; clear:none"-->
+					<h2>View the project on github</h2>
+				</a>
+			</div>
+			<div id="updates">
 				<div class="wide_panels"><!-- style="float:left; clear:none"-->
 					<h2>Recent Updates</h2>
 					<hr style="color:#fc6100; background-color:#fc6100; height:5px; margin-bottom:10px;">
@@ -54,66 +93,50 @@
 					</div>
 				</div>
 			</div>
-			<a href="https://github.com/MrRiptide/Jynn" style="width:35%; float:right; text-align:right;" class="sidepanel"><!-- style="float:right; clear:none"-->
-				<h2>View the project on github</h2>
-			</a>
 		</div>
+		<br class="clear">
 	</body>
 	<footer>© MrRiptide 2019</footer>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
-	// Create the dropdown base
-	$("<select />").appendTo("nav");
-
-	// Populate dropdown with menu items
-	$("nav a").each(function() {
-	 var el = $(this);
-	 if (el.attr("class")=="active"){
-		 $("<option />", {
-			 "selected": "selected",
-			 "value"   : el.attr("href"),
-			 "text"    : el.text()
-		 }).appendTo("nav select");
-	 } else{
-		 $("<option />", {
-			 "value"   : el.attr("href"),
-			 "text"    : el.text()
-		 }).appendTo("nav select");
-	 }
-	});
-	$("nav select").change(function() {
-		window.location = $(this).find("option:selected").val();
-	});
+	function reponsiveNavBar() {
+		var x = document.getElementById("myTopnav");
+		if (x.className === "topnav") {
+			x.className += " responsive";
+		} else {
+			x.className = "topnav";
+		}
+	}
 	</script>
 
 <!--Code for sticky scrolling-->
 
 	<script>
-	// When the user scrolls the page, execute myFunction
-	window.onscroll = function() {myFunction()};
+	// When the user scrolls the page, execute reponsiveNavBar
+	window.onscroll = function() {stickyFunction()};
 
-	// Get the navbar
-	var navbar = document.getElementById("navbar");
+	// Get the myTopnav
+	var myTopnav = document.getElementById("myTopnav");
 
-	// Get the offset position of the navbar
-	var sticky = navbar.offsetTop;
+	// Get the offset position of the myTopnav
+	var sticky = myTopnav.offsetTop;
 
-	// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-	function myFunction() {
+	// Add the sticky class to the myTopnav when you reach its scroll position. Remove "sticky" when you leave the scroll position
+	function stickyFunction() {
 	  if (window.pageYOffset >= sticky) {
-	    navbar.classList.add("sticky")
+	    myTopnav.classList.add("sticky")
 	  } else {
-	    navbar.classList.remove("sticky");
+	    myTopnav.classList.remove("sticky");
 	  }
 	}
 
-	/* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the icon */
+	/* Toggle between adding and removing the "responsive" class to myTopnav when the user clicks on the icon */
 	function responsive() {
-	  var x = document.getElementById("navbar");
-	  if (x.className === "navbar") {
+	  var x = document.getElementById("myTopnav");
+	  if (x.className === "myTopnav") {
 	    x.className += " responsive";
 	  } else {
-	    x.className = "navbar";
+	    x.className = "myTopnav";
 	  }
 	}
 	</script>
