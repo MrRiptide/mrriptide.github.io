@@ -189,7 +189,7 @@ p {
 .active {
 
 	background-color: #3ffc00
-  
+
 }
 
 
@@ -417,4 +417,21 @@ p {
 .clear {
     clear:both;
     line-height:0;
+}
+#updates {
+  width: 70%;
+}
+@media screen and (max-width: 850px) {
+  #updates {
+    width: 100%;
+  }
+  #twitter {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1048px) {
+  #banner {
+    display: none;
+  }
 }
