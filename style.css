@@ -99,9 +99,8 @@ hr {
 
 .announcement {
 
-	float: center;
 	text-align: center;
-	font-size: 25px;
+	font-size: 3em;
 	margin: auto;
 	padding: 10px 5%;
 	width: 90%;
