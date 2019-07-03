@@ -23,9 +23,10 @@
 				width: 100%;
 				background-color: #4b367c;
 				color: white;
+				display: none;
 			}
 		</style>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script>
 			var json = {}
 			var data = $.ajax({
@@ -34,13 +35,13 @@
 		    headers: {"Client-ID": "iyy7qllegre2lxg5v1nh359o4hvpec"},
 				complete: function(data){
 					json = $.parseJSON(data.responseText);
-					if (json["data"] == "") {
-						$(".twitch-announcement").css("display", "none");
+					if (json["data"] != "") {
+						$(".twitch-announcement").css("display", "inherit");
 					}
 				}
 			});
 		</script>
-		<a href="https://twitch.tv/MrRiptideTV" target="_blank" width="100%;">
+		<a href="https://twitch.tv/MrRiptideTV" target="_blank" width="100%;" style="display:inherit">
 			<div id="twitch" class="twitch-announcement">
 				<img src="resources/twitch-white.png" style="width:0.75em; margin-right:10px">
 				MrRiptide is LIVE
