@@ -89,48 +89,9 @@
 		</div>
 	</body>
 	<footer>© MrRiptide 2019</footer>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-	<script>
-	function reponsiveNavBar() {
-		var x = document.getElementById("myTopnav");
-		if (x.className === "topnav") {
-			x.className += " responsive";
-		} else {
-			x.className = "topnav";
-		}
-	}
-	</script>
-
-<!--Code for sticky scrolling-->
-
-	<script>
-	// When the user scrolls the page, execute reponsiveNavBar
-	window.onscroll = function() {stickyFunction()};
-
-	// Get the myTopnav
-	var myTopnav = document.getElementById("myTopnav");
-
-	// Get the offset position of the myTopnav
-	var sticky = myTopnav.offsetTop;
-
-	// Add the sticky class to the myTopnav when you reach its scroll position. Remove "sticky" when you leave the scroll position
-	function stickyFunction() {
-	  if (window.pageYOffset >= sticky) {
-	    myTopnav.classList.add("sticky")
-	  } else {
-	    myTopnav.classList.remove("sticky");
-	  }
-	}
-
-	/* Toggle between adding and removing the "responsive" class to myTopnav when the user clicks on the icon */
-	function responsive() {
-	  var x = document.getElementById("myTopnav");
-	  if (x.className === "myTopnav") {
-	    x.className += " responsive";
-	  } else {
-	    x.className = "myTopnav";
-	  }
-	}
-	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="javascript/twitch-stream.js"></script>
+	<script src="javascript/responsive-nav.js"></script>
+	<script src="javascript/sticky-nav.js"></script>
 </html>

@@ -12,43 +12,6 @@
 		<div id="banner" style="width:100; background-color: black; ">
 			<img src="resources/banner.png" style="display: block; margin-left: auto; margin-right: auto;">
 		</div>
-		<!--Twitch Live Banner-->
-		<style>
-			.twitch-announcement {
-				text-align: center;
-				padding: 5px;
-				padding-left: 0px;
-				padding-right: 0px;
-				font-size: 3em;
-				width: 100%;
-				background-color: #4b367c;
-				color: white;
-				display: none;
-			}
-		</style>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script>
-			var json = {}
-			var data = $.ajax({
-		    url: "https://api.twitch.tv/helix/streams/?user_login=MrRiptideTV",
-				dataType: "json",
-		    headers: {"Client-ID": "iyy7qllegre2lxg5v1nh359o4hvpec"},
-				complete: function(data){
-					json = $.parseJSON(data.responseText);
-					if (json["data"] != "") {
-						$(".twitch-announcement").css("display", "inherit");
-					}
-				}
-			});
-		</script>
-		<a href="https://twitch.tv/MrRiptideTV" target="_blank" width="100%;" style="display:inherit">
-			<div id="twitch" class="twitch-announcement">
-				<img src="resources/twitch-white.png" style="width:0.75em; margin-right:10px">
-				MrRiptide is LIVE
-				<img src="resources/twitch-white.png" style="width:0.75em; margin-left:10px">
-			</div>
-		</a>
-		<!--End Twitch Live Banner-->
 		<div class="topnav" id="myTopnav">
 			<a href="./" id="active">Home</a>
 			<a href="about/">About</a>
@@ -92,50 +55,19 @@
 				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 			</div>
 			<br class="clear">
+			<br><br>
+			<br><br>
+			<br><br>
+			<br><br>
+			<br><br>
+			<br><br>
+			<br><br>
 		</div>
 	</body>
 	<footer>© MrRiptide 2019</footer>
 
-	<script>
-	function reponsiveNavBar() {
-		var x = document.getElementById("myTopnav");
-		if (x.className === "topnav") {
-			x.className += " responsive";
-		} else {
-			x.className = "topnav";
-		}
-	}
-	</script>
-
-<!--Code for sticky scrolling-->
-
-	<script>
-	// When the user scrolls the page, execute reponsiveNavBar
-	window.onscroll = function() {stickyFunction()};
-
-	// Get the myTopnav
-	var myTopnav = document.getElementById("myTopnav");
-
-	// Get the offset position of the myTopnav
-	var sticky = myTopnav.offsetTop;
-
-	// Add the sticky class to the myTopnav when you reach its scroll position. Remove "sticky" when you leave the scroll position
-	function stickyFunction() {
-	  if (window.pageYOffset >= sticky) {
-	    myTopnav.classList.add("sticky")
-	  } else {
-	    myTopnav.classList.remove("sticky");
-	  }
-	}
-
-	/* Toggle between adding and removing the "responsive" class to myTopnav when the user clicks on the icon */
-	function responsive() {
-	  var x = document.getElementById("myTopnav");
-	  if (x.className === "myTopnav") {
-	    x.className += " responsive";
-	  } else {
-	    x.className = "myTopnav";
-	  }
-	}
-	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="javascript/twitch-stream.js"></script>
+	<script src="javascript/responsive-nav.js"></script>
+	<script src="javascript/sticky-nav.js"></script>
 </html>

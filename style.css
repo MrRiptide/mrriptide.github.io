@@ -20,7 +20,8 @@
 
 html, body {
 
-  background-color: #0c0c0c;
+  background-color: #000;
+  /*background-color: #0c0c0c;*/
 	width: 100%;
 	min-height: 100%;
 	font-family: 'Verdana';
@@ -59,7 +60,7 @@ h1 {
 	margin-top: 5px;
 	margin-bottom: 5px;
 	padding-top: 0px;
-	font-size: 4em;
+	font-size: 5em;
 	color: #3ffc00;
 	text-align: center;
 
@@ -77,12 +78,26 @@ h3 {
 	font-size: 2em;
 
 }
-}
 
 h4 {
 
 	font-size: 1.5em;
 
+}
+
+@media screen and (max-width: 570px) {
+  h1 {
+    font-size: 14vw;
+  }
+  h2 {
+    font-size: 8.4vw;
+  }
+  h3 {
+    font-size: 5.6vw;
+  }
+  h4 {
+    font-size: 4.2vw;
+  }
 }
 
 hr {
@@ -551,4 +566,8 @@ p {
   #banner {
     display: none;
   }
+}
+
+.close:hover {
+  background-color: #30224f;
 }
