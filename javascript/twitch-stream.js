@@ -1,7 +1,7 @@
 $(document).ready(function(){
     var json = {}
     var data = $.ajax({
-    url: "https://api.twitch.tv/helix/streams/?user_login=MrRiptideTV",
+    url: "https://api.twitch.tv/helix/streams/?user_login=MrRiptide",
         dataType: "json",
     headers: {"Client-ID": "iyy7qllegre2lxg5v1nh359o4hvpec"},
         complete: function(data){
@@ -66,7 +66,7 @@ $(document).ready(function(){
                 var embed = document.createElement("embed");
                 embed.style.width = "100%";
                 embed.style.height = "85%";
-                embed.setAttribute("src", "https://player.twitch.tv/?channel=MrRiptideTV");
+                embed.setAttribute("src", "https://player.twitch.tv/?channel=MrRiptide");
                 main_div.appendChild(embed);
             }
         }
