@@ -1,4 +1,4 @@
-$(document).ready(function(){
+/*$(document).ready(function(){
     var json = {}
     var data = $.ajax({
     url: "https://api.twitch.tv/helix/streams/?user_login=MrRiptide",
@@ -72,3 +72,4 @@ $(document).ready(function(){
         }
     });
 });
+*/
